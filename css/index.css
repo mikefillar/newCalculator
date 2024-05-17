@@ -3,6 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+body{
+    background-color: black;
+}
 
 .clock{
     /* background-color: aqua; */
@@ -14,11 +17,12 @@
 .clock h2{
     font-size: 2rem;
     padding: 20px;
+    color: #DFD0B8;
 }
 .clock h2:hover{
     background-color:#153448;
-    color: #fff;
-    opacity: 0.7;
+    color: #DFD0B8;
+    /* opacity: ; */
     border-radius: 10px 10px 10px 10px;
 }
 

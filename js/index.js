@@ -1,19 +1,28 @@
 //display time
-let date = new Date();
-let hour = date.getHours();
-let minute = date.getMinutes();
-let hours = document.getElementById('hours');
-let minutes = document.getElementById('minutes');
-let second = date.getSeconds();
-let seconds = document.getElementById('seconds');
-function setClock(){
-    (hour>12)?hour-=12 : hour;
-    // console.log(hour);
-    hours.innerHTML=(hour<10)?'0'+hour : hour;
-    minutes.innerHTML=(minute<10)?'0'+minute : minute;
-    seconds.innerHTML=(second<10)?'0'+second : second;
+function setTime(){
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    
+    let display = document.getElementById('displayTime');
+    let time = '';
+    let ampm = '';
+    (hours<=11)? ampm='AM' : ampm='PM';
+    (hours>12)? hours-=12 :
+    (hours==0)? hours=12 : hours;
+    (hours<10)? hours='0'+hours : hours;
+    (minutes<10)? minutes='0'+minutes : minutes;
+    (seconds<10)? seconds='0'+seconds : seconds;
+    console.log(hours);
+    console.log(minutes);
+    console.log(seconds);
+    console.log(ampm);
+    time = (`${hours}:${minutes}:${seconds} ${ampm}`);
+    // console.log(time);
+    display.innerHTML = time;
 }
-setInterval(setClock,1000);
+setInterval(setTime,1000);
 
 
 //calculator
